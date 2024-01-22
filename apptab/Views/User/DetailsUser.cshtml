@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Détails utilisateur";
+    ViewData["Controller"] = "Détails utilisateur";
+    /*Layout = "~/Views/Shared/_Layout.cshtml";*/
+}
+
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Login</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="Login">
+    </div>
+</div>
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Rôle</span>
+        </div>
+        <select class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="Role" data-id="User-role-list">
+            @*<option value="value"></option>*@
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Mot de passe</span>
+        </div>
+        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="MDP">
+    </div>
+</div>
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Confirmer le mot de passe</span>
+        </div>
+        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="MDPC">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="mb-3 col">
+        <div class="btn btn-flat bg-gradient-olive col-12" data-action="UpdateUser">
+            <i class="fa fa-save"></i> Enregistrer
+        </div>
+    </div>
+</div>
+
+<!-- USer.js -->
+<script src="~/Assets/js/RoleDetails.js"></script>

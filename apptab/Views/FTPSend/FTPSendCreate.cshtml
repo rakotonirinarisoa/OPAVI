@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Paramétrage FTP";
+    ViewData["Controller"] = "Paramétrage FTP";
+    /*Layout = "~/Views/Shared/_Layout.cshtml";*/
+}
+
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Hôte</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="Hote">
+    </div>
+</div>
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Identifiant</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="Identifiant">
+    </div>
+</div>
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Mot de passe</span>
+        </div>
+        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="MDP">
+    </div>
+</div>
+<div class="form-row">
+    <div class="input-group mb-3 col">
+        <div class="input-group-prepend">
+            <span class="input-group-text text-bold" id="inputGroup-sizing-default">Path</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="Path">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="mb-3 col">
+        <div class="btn btn-flat bg-gradient-olive col-12" data-action="UpdateUser">
+            <i class="fa fa-save"></i> Enregistrer
+        </div>
+    </div>
+</div>
+
+<!-- Droit.js -->
+<script src="~/Assets/js/Ftp.js"></script>
+
+
