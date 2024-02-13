@@ -30,25 +30,26 @@ $(document).ready(() => {
     console.log($(`[tab="autre"]`).hide());
 
 
-    GetUR();
-    GetListCodeJournal();
+    //GetUR();
+    GetListCodeJournal("1");
     
 
     
     //GetListCompG();
 });
 
-function GetListCompG() {
+function GetListCompG(id) {
     let formData = new FormData();
 
     formData.append("suser.LOGIN", User.LOGIN);
     formData.append("suser.PWD", User.PWD);
     formData.append("suser.ROLE", User.ROLE);
     formData.append("suser.IDSOCIETE", User.IDSOCIETE);
+    formData.append("baseName", id );
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Home/GetCompteG',
+        url: Origin + '/Home/GetCompteG',
         data: formData,
         cache: false,
         contentType: false,
@@ -67,18 +68,17 @@ function GetListCompG() {
                 return;
             }
 
-            let code = ``;
+            let code = `<option value = "Tous" > Tous</option> `;
             let codeAuxi = ``;
+            ListCompteG = ``;
             ListCompteG = Datas.data;
-
-
-
+            console.log(ListCompteG);
             $.each(ListCompteG, function (k, v) {
                 code += `
                     <option value="${v.COGE}">${v.COGE}</option>
                 `;
             });
-
+            $(`[compG-list]`).html('');
             $(`[compG-list]`).append(code);
             
             FillAUXI();
@@ -93,7 +93,7 @@ function GetListCompG() {
 function FillAUXI() {
     var list = ListCompteG.filter(x => x.COGE == $(`[compG-list]`).val()).pop();
     console.log(list);
-    let code = "";
+    let code = `<option value="Tous"> Tous</option> `;
     $.each(list.AUXI, function (k, v) {
         code += `
                     <option value="${v}">${v}</option>
@@ -102,7 +102,7 @@ function FillAUXI() {
 
     $(`[auxi-list]`).html(code);
 }
-function GetEtat() {
+function GetEtat(id) {
     let formData = new FormData();
     formData.append("suser.LOGIN", User.LOGIN);
     formData.append("suser.PWD", User.PWD);
@@ -111,7 +111,7 @@ function GetEtat() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Home/GetEtat',
+        url: Origin + '/Home/GetEtat',
         data: formData,
         cache: false,
         contentType: false,
@@ -125,13 +125,13 @@ function GetEtat() {
             if (Datas.type == "login") {
                 return;
             }
-
+            etaCode = `<option value = "Tous" > Tous</option> `;
             $.each(listEtat, function (k, v) {
                 etaCode += `
                     <option value="${v}">${v}</option>
                 `;
             });
-
+            $(`[ETAT-list]`).html('');
             $(`[ETAT-list]`).append(etaCode);
 
         },
@@ -154,18 +154,18 @@ $(document).on("change", "[auxi-list]", () => {
     FillCompteName();
 });
 
-function GetListCodeJournal() {
+function GetListCodeJournal(id) {
     let formData = new FormData();
 
     formData.append("suser.LOGIN", User.LOGIN);
     formData.append("suser.PWD", User.PWD);
     formData.append("suser.ROLE", User.ROLE);
     formData.append("suser.IDSOCIETE", User.IDSOCIETE);
-    formData.append("baseName", baseName);
+    formData.append("baseName", id);
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Home/GetCODEJournal',
+        url: Origin + '/Home/GetCODEJournal',
         data: formData,
         cache: false,
         contentType: false,
@@ -195,13 +195,13 @@ function GetListCodeJournal() {
 
             $(`[codej-list]`).append(code);
             $(`[codej-libelle]`).val(ListCodeJournal[0].LIBELLE);
-            GetEtat();
+            GetEtat(id);
         },
         error: function () {
             alert("Problème de connexion. ");
         }
     }).done(function (res) {
-        GetListCompG();
+        GetListCompG(id);
     });
 }
 $(document).on("change", "[codej-list]", () => {
@@ -240,7 +240,7 @@ $(`[data-action="CreateTxt"]`).click(function () {
 
     //$.ajax({
     //    type: "POST",
-    //    url: urlOrigin + '/Home/CreateZipFile',
+    //    url: Origin + '/Home/CreateZipFile',
     //    data: formData,
     //    cache: false,
     //    contentType: false,
@@ -295,7 +295,7 @@ $('[data-action="ChargerJs"]').click(function () {
         formData.append("datePaie", $('#dpaie').val());
         $.ajax({
             type: "POST",
-            url: urlOrigin + '/Home/getelementjsPaie',
+            url: Origin + '/Home/getelementjsPaie',
             data: formData,
             cache: false,
             contentType: false,
@@ -358,7 +358,7 @@ $('[data-action="ChargerJs"]').click(function () {
 
         $.ajax({
             type: "POST",
-            url: urlOrigin + '/Home/getelementjs',
+            url: Origin + '/Home/getelementjs',
             data: formData,
             cache: false,
             contentType: false,
@@ -423,7 +423,7 @@ $('[data-action="ChargerJs"]').click(function () {
 
         $.ajax({
             type: "POST",
-            url: urlOrigin + '/Home/getelementjsBR',
+            url: Origin + '/Home/getelementjsBR',
             data: formData,
             cache: false,
             contentType: false,
@@ -512,7 +512,7 @@ $('[data-action="GetElementChecked"]').click(function () {
         formData.append("baseName", baseName);
         $.ajax({
             type: "POST",
-            url: urlOrigin + '/Home/GetCheckedComptePaie',
+            url: Origin + '/Home/GetCheckedComptePaie',
             data: formData,
             cache: false,
             contentType: false,
@@ -585,7 +585,7 @@ $('[data-action="GetElementChecked"]').click(function () {
 
         $.ajax({
             type: "POST",
-            url: urlOrigin + '/Home/GetCheckedCompte',
+            url: Origin + '/Home/GetCheckedCompte',
             data: formData,
             cache: false,
             contentType: false,
@@ -655,7 +655,7 @@ $('[data-action="GetElementChecked"]').click(function () {
         }
     //$.ajax({
     //    type: "POST",
-    //    url: urlOrigin + '/Home/GetCheckedCompte',
+    //    url: Origin + '/Home/GetCheckedCompte',
     //    data: formData,
     //    cache: false,
     //    contentType: false,
@@ -833,7 +833,7 @@ $('[data-action="GetAnomalieListes"]').click(function () {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Home/GetAnomalieBack',
+        url: Origin + '/Home/GetAnomalieBack',
         data: formData,
         cache: false,
         contentType: false,
@@ -901,7 +901,7 @@ function getelementTXT(a) {
 
     //$.ajax({
     //    type: "POST",
-    //    url: urlOrigin + '/Home/CreateZipFile',
+    //    url: Origin + '/Home/CreateZipFile',
     //    cache: false,
     //    contentType: 'application/json; charset=utf-8',
     //    processData: false,
@@ -963,14 +963,14 @@ function getelementTXT(a) {
     formData.append("intbasetype", a);
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Home/CreateZipFile',
+        url: Origin + '/Home/CreateZipFile',
         data: formData,
         cache: false,
         contentType: false,
         processData: false,
         success: function (result) {
             var Datas = JSON.parse(result);
-           alert(Datas.data)
+            alert(Datas.data)
             if (Datas.type == "error") {
                 return;
             }
@@ -988,20 +988,64 @@ var baseName = "1";
 $(`[name="options"]`).on("change", (k, v) => {
     
     var baseId = $(k.target).attr("data-id");
+    alert(baseId);
     baseName = baseId;
     if (baseId == "1") {
         $(`[tab="paie"]`).show();
         $(`[tab="autre"]`).hide();
-        //GetListCodeJournal();
+        GetListCodeJournal(baseName);
     } else {
         $(`[tab="autre"]`).show();
         $(`[tab="paie"]`).hide();
         $('.afb160').empty();
         $('#afb').empty();
-        //GetListCodeJournal();
+
+        ListCompteG = ``;
+        GetListCodeJournal(baseName);
     }
 
 });
+$('.Checkall').change(function () {
+    alert("checkall");
+    if ($('.Checkall').prop("checked") == true) {
+        $('[compteg-ischecked]').prop("checked", false);
+    } else {
+        $('[compteg-ischecked]').prop("checked", true);
+    }
 
-let urlOrigin = "https://localhost:44334";
+});
+function exportTableToExcel(tableID, filename = 'RAS') {
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+    // Specify file name
+    filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+    // Create download link element
+    downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+    if (confirm("Télécharger")== true) {
+        if (navigator.msSaveOrOpenBlob) {
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+    }
+   
+}
+
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";

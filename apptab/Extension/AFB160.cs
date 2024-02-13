@@ -1383,10 +1383,10 @@ namespace apptab.Extension
                 }
                 else
                 {
-                    if (auxi == "")
+                    if (auxi == "" || auxi == "Tous")
                     {
                         var reglements1 = (from mcpt in tom.MCOMPTA
-                                           where mcpt.JL == journal && mcpt.DATCLE.Date >= dateD.Date && mcpt.DATCLE.Date <= dateF.Date && mcpt.COGE == compteG && mcpt.EVIREMENT == null
+                                           where mcpt.JL == journal && mcpt.DATCLE >= dateD && mcpt.DATCLE <= dateF && mcpt.COGE == compteG && mcpt.EVIREMENT == null
                                            group mcpt by mcpt.NORD into mcptgroupe
                                            select new
                                            {
@@ -1705,8 +1705,8 @@ namespace apptab.Extension
             OPAVIWEB db = new OPAVIWEB();
             OPAVITOMATE tom = new OPAVITOMATE();
             List<DataListTomOP> list = new List<DataListTomOP>();
-            //if (etat == "")
-            //    etat = null;
+            if (etat == "VERIFIES")
+                etat = null;
 			RJL1 djournal = (from jrnl in tom.RJL1
 							 where jrnl.CODE == journal
 							 select jrnl).Single();//Miova table FOP

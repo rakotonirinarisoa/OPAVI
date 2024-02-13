@@ -11,7 +11,7 @@ $(document).ready(() => {
 });
 
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListSociete() {
     let formData = new FormData();
@@ -23,7 +23,7 @@ function GetListSociete() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/SuperAdmin/FillTable',
+        url: Origin + '/SuperAdmin/FillTable',
         data: formData,
         cache: false,
         contentType: false,
@@ -94,7 +94,7 @@ $(`[data-action="AddnewSociete"]`).click(function () {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/SuperAdmin/AddSociete',
+        url: Origin + '/SuperAdmin/AddSociete',
         data: formData,
         cache: false,
         contentType: false,
@@ -108,7 +108,7 @@ $(`[data-action="AddnewSociete"]`).click(function () {
             }
             if (Datas.type == "success") {
                 alert(Datas.msg);
-                window.location = urlOrigin + "/SuperAdmin/SocieteList";
+                window.location = Origin + "/SuperAdmin/SocieteList";
             }
             if (Datas.type == "login") {
                 alert(Datas.msg);

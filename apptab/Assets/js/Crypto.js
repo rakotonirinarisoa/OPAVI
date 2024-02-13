@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetListUser();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListUser() {
     let formData = new FormData();
@@ -22,7 +22,7 @@ function GetListUser() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Crypto/FillTable',
+        url: Origin + '/Crypto/FillTable',
         data: formData,
         cache: false,
         contentType: false,

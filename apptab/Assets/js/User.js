@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetListUser();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListUser() {
     let formData = new FormData();
@@ -22,7 +22,7 @@ function GetListUser() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/FillTable',
+        url: Origin + '/User/FillTable',
         data: formData,
         cache: false,
         contentType: false,
@@ -83,7 +83,7 @@ function deleteUser(id) {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/DeleteUser',
+        url: Origin + '/User/DeleteUser',
         data: formData,
         cache: false,
         contentType: false,
@@ -106,5 +106,5 @@ function deleteUser(id) {
 }
 
 function DetailUpdateUser(id) {
-    window.location = urlOrigin + "/User/DetailsUser?UserId=" + id;
+    window.location = Origin + "/User/DetailsUser?UserId=" + id;
 }

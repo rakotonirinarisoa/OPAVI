@@ -1,0 +1,18 @@
+0302                     02024SOFTWELLVersiondémoSOFTW000186                               1234567890                                                           
+0602              BQ2U00001117Brigitte ELISON                                         00015050010584080000002748186144Perdiem pou                    00008      
+0702              BQ2U00001117Brigitte ELISON                                         00015050010584080000000000000000r le Minist                    00008      
+0602              BQ2U00001118JOHARISON Jimmy                                         00015050010584080000001513896514Perdiem pou                    00008      
+0702              BQ2U00001118JOHARISON Jimmy                                         00015050010584080000000000000000r l'equipe                     00008      
+0602              BQ2U00001119RAMANAMISATA Rivo Nomenj                                0420021030010009000000014742500080% Perdiem                    00009      
+0702              BQ2U00001119RAMANAMISATA Rivo Nomenj                                04200210300100090000000000000000 pour l'equ                    00009      
+0602              BQ2U00001120RAZAFIMBELO Haingo                                      00015050010584080000008754128824Perdiem pou                    00008      
+0702              BQ2U00001120RAZAFIMBELO Haingo                                      00015050010584080000000000000000r l'equipe                     00008      
+0602              BQ2U00001121ANDRIANATOAVINA FelirijaBOA Antaninare                  05000157683700080000005254955058Perdiem pou                    00009      
+0702              BQ2U00001121ANDRIANATOAVINA FelirijaBOA Antaninare                  05000157683700080000000000000000r l'equipe                     00009      
+0602              BQ2U00001122Ladislas Adrien RAKOTOND                                00101437241700020000001734626565Perdiem pou                    00005      
+0702              BQ2U00001122Ladislas Adrien RAKOTOND                                00101437241700020000000000000000r l'equipe                     00005      
+0602              BQ2U00001123ANDRIANATOAVINA FelirijaBOA Antaninare                  05000157683700080000007354034432Perdiem pou                    00009      
+0702              BQ2U00001123ANDRIANATOAVINA FelirijaBOA Antaninare                  05000157683700080000000000000000r l'equipe                     00009      
+0602              BQ2U00001124ANDRIANATOAVINA FelirijaBOA Antaninare                  05000157683700080000007900997184Perdiem pou                    00009      
+0702              BQ2U00001124ANDRIANATOAVINA FelirijaBOA Antaninare                  05000157683700080000000000000000r l'equipe                     00009      
+0802                                                                                                  0000035408249721                                          

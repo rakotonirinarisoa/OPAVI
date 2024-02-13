@@ -1,0 +1,10 @@
+0302                     02024SOFTWELLVersiondémoSOFTW000182                               1234567890                                                           
+0602              BQ2U00001101Brigitte ELISON                                         00015050010584080000002748186144Perdiem pou                    00008      
+0702              BQ2U00001101Brigitte ELISON                                         00015050010584080000000000000000r le Minist                    00008      
+0602              BQ2U00001102JOHARISON Jimmy                                         00015050010584080000001513896514Perdiem pou                    00008      
+0702              BQ2U00001102JOHARISON Jimmy                                         00015050010584080000000000000000r l'equipe                     00008      
+0602              BQ2U00001103RAMANAMISATA Rivo Nomenj                                0420021030010009000000014742500080% Perdiem                    00009      
+0702              BQ2U00001103RAMANAMISATA Rivo Nomenj                                04200210300100090000000000000000 pour l'equ                    00009      
+0602              BQ2U00001104RAZAFIMBELO Haingo                                      00015050010584080000008754128824Perdiem pou                    00008      
+0702              BQ2U00001104RAZAFIMBELO Haingo                                      00015050010584080000000000000000r l'equipe                     00008      
+0802                                                                                                  0000013163636482                                          

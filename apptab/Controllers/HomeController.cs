@@ -197,11 +197,11 @@ namespace SOFTOPAVI.Controllers
 				var pathfile=aFB160.CreateTOMPROAFB160(devise, codeJ, suser);
 				if (intbasetype == 0)
 				{
-					CreateAFBTXT(pathfile.Chemin, pathfile.Fichier);
+                    send = CreateAFBTXT(pathfile.Chemin, pathfile.Fichier);
 				}
 				else if (intbasetype == 1)
 				{
-					CreateAFBTXTArch(pathfile.Chemin, pathfile.Fichier, ps);
+                    send = CreateAFBTXTArch(pathfile.Chemin, pathfile.Fichier, ps);
 				}
 				else if (intbasetype == 2)
 				{
@@ -460,7 +460,7 @@ namespace SOFTOPAVI.Controllers
 			//	OPAVITOMATE.connex = "Data Source=FID-INF-PC;Initial Catalog=PIC3;User ID=sa;Password=Soft123well!;";
 			//}
 			//OPAVITOMATE.connex = "Data Source=FID-INF-PC;Initial Catalog=TOMPAIE;User ID=sa;Password=Soft123well!;";
-			OPAVITOMATE.connex = "Data Source=FID-INF-PC;Initial Catalog=PIC;Integrated Security=True";
+			OPAVITOMATE.connex = "Data Source=DESKTOP-N8EMIRC;Initial Catalog=PIC;Integrated Security=True";
 			//OPAVITOMATE.connex = "Data Source=NOM-IT-PC;Initial Catalog=PIC3;Integrated Security=True";
 			OPAVITOMATE __db = new OPAVITOMATE();
 
@@ -472,29 +472,36 @@ namespace SOFTOPAVI.Controllers
 			return Json(JsonConvert.SerializeObject(new { type = "success", msg = "Connexion avec succès. ", data = JournalVM }, settings));
 		}
 		[HttpPost]
-		public JsonResult GetCompteG()
+		public JsonResult GetCompteG(string baseName)
         {
-            
+			int baseId = int.Parse(baseName);
 			var CompteG = __db.MCOMPTA.Where(a => a.COGE.StartsWith("4")).GroupBy(x => x.COGE).Select(x => new
 			{
 				COGE = x.Key,
 				AUXI = x.Select(y=>y.AUXI).Distinct().ToList()
 			}).ToList();
 
-            var CompteG1 = __db.MCOMPTA.Where(a => a.COGE.StartsWith("4")).Join(__db.RTIERS, mcompta => mcompta.COGEAUXI, rtiers => rtiers.COGEAUXI, (mcompta, rtiers) => new
-            {
-                COGE = mcompta.COGE,
-                AUXI = mcompta.AUXI,
-				NOM = rtiers.NOM
-            }).GroupBy(x => x.COGE).Select(x => new
+    //         var CompteG1 = __db.MCOMPTA.Where(a => a.COGE.StartsWith("4")).Join(__db.RTIERS, mcompta => mcompta.COGEAUXI, rtiers => rtiers.COGEAUXI, (mcompta, rtiers) => new
+    //        {
+    //            COGE = mcompta.COGE,
+    //            AUXI = mcompta.AUXI
+				////NOM = rtiers.NOM
+    //        }).GroupBy(x => x.COGE).Select(x => new
+    //        {
+    //        	COGE = x.Key,
+    //        	AUXI = x.Select(y => y.AUXI/*new { AUXI = y.AUXI, NOM = y.NOM }*/).Distinct().ToList()
+    //        }).ToList();
+			var CompteGBR = __db.MOP.Where(a => a.COGE.StartsWith("4")).GroupBy(x => x.COGE).Select(x => new
 			{
 				COGE = x.Key,
-				AUXI = x.Select(y => new { AUXI = y.AUXI, NOM = y.NOM }).Distinct().ToList()
+				AUXI = x.Select(y => y.AUXI/*new { AUXI = y.AUXI, NOM = y.NOM }*/).Distinct().ToList()
 			}).ToList();
-
-			//var CompteG = __db.MCOMPTA.Where(a => a.COGE.ToString().Substring(0,1) == "4").ToList();
-			//var CompteG = __db.MCOMPTA.Where(a => a.COGE.StartsWith("4")).Select(x=>x.COGE && x.AUXI).Distinct().ToList();
-
+            //var CompteG = __db.MCOMPTA.Where(a => a.COGE.ToString().Substring(0,1) == "4").ToList();
+            //var CompteG = __db.MCOMPTA.Where(a => a.COGE.StartsWith("4")).Select(x=>x.COGE && x.AUXI).Distinct().ToList();
+            if (baseId == 3 )
+			{
+                return Json(JsonConvert.SerializeObject(new { type = "success", msg = "Connexion avec succès. ", data = CompteGBR }, settings));
+            }
 			return Json(JsonConvert.SerializeObject(new { type = "success", msg = "Connexion avec succès. ", data = CompteG }, settings));
 		}
 

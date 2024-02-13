@@ -17,7 +17,7 @@ $(document).ready(() => {
     });
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListUser() {
     let formData = new FormData();
@@ -29,7 +29,7 @@ function GetListUser() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Admin/GetAllUser',
+        url: Origin + '/Admin/GetAllUser',
         data: formData,
         cache: false,
         contentType: false,
@@ -130,7 +130,7 @@ function GetDB(instanceID) {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Admin/GetDB',
+        url: Origin + '/Admin/GetDB',
         data: formData,
         cache: false,
         contentType: false,
@@ -196,7 +196,7 @@ $(`[data-action="AddnewMapp"]`).click(function () {
     
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Admin/AdminMaPUserCreate',
+        url: Origin + '/Admin/AdminMaPUserCreate',
         data: formData,
         cache: false,
         contentType: false,
@@ -210,7 +210,7 @@ $(`[data-action="AddnewMapp"]`).click(function () {
             }
             if (Datas.type == "success") {
                 alert(Datas.msg);
-                window.location = urlOrigin + "/Admin/AdminMaPUserList";
+                window.location = Origin + "/Admin/AdminMaPUserList";
                 /*window.history.back();*/
                 /*location.replace(document.referrer);*/
             }

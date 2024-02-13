@@ -1,4 +1,5 @@
-﻿function getUrlParameter(sParam) {
+﻿
+function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
@@ -24,7 +25,7 @@ function GetUR() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/GetUR',
+        url: Origin + '/User/GetUR',
         data: formData,
         cache: false,
         contentType: false,

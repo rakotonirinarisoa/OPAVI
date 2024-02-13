@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetListRole();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListRole() {
     let formData = new FormData();
@@ -22,7 +22,7 @@ function GetListRole() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/GetAllRole',
+        url: Origin + '/User/GetAllRole',
         data: formData,
         cache: false,
         contentType: false,
@@ -86,7 +86,7 @@ $(`[data-action="AddnewUser"]`).click(function () {
     
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/AddUser',
+        url: Origin + '/User/AddUser',
         data: formData,
         cache: false,
         contentType: false,
@@ -100,7 +100,7 @@ $(`[data-action="AddnewUser"]`).click(function () {
             }
             if (Datas.type == "success") {
                 alert(Datas.msg);
-                window.location = urlOrigin + "/User/List";
+                window.location = Origin + "/User/List";
                 /*window.history.back();*/
                 /*location.replace(document.referrer);*/
             }

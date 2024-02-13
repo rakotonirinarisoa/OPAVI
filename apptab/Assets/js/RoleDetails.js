@@ -11,7 +11,7 @@ $(document).ready(() => {
     GetUsers();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListRole() {
     let formData = new FormData();
@@ -23,7 +23,7 @@ function GetListRole() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/GetAllRole',
+        url: Origin + '/User/GetAllRole',
         data: formData,
         cache: false,
         contentType: false,
@@ -72,7 +72,7 @@ function GetUsers() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/DetailsUser',
+        url: Origin + '/User/DetailsUser',
         data: formData,
         cache: false,
         contentType: false,
@@ -124,7 +124,7 @@ function GetUsers() {
 
 //    $.ajax({
 //        type: "POST",
-//        url: urlOrigin + '/User/UpdateUser',
+//        url: Origin + '/User/UpdateUser',
 //        data: formData,
 //        cache: false,
 //        contentType: false,
@@ -139,7 +139,7 @@ function GetUsers() {
 //            }
 //            if (Datas.type == "success") {
 //                alert(Datas.msg);
-//                window.location = urlOrigin + "/User/List";
+//                window.location = Origin + "/User/List";
 //                /*window.history.back();*/
 //                /*location.replace(document.referrer);*/
 //            }
@@ -177,7 +177,7 @@ $(`[data-action="UpdateUser"]`).click(function () {
     
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/User/UpdateUser',
+        url: Origin + '/User/UpdateUser',
         data: formData,
         cache: false,
         contentType: false,
@@ -191,7 +191,7 @@ $(`[data-action="UpdateUser"]`).click(function () {
             }
             if (Datas.type == "success") {
                 alert(Datas.msg);
-                window.location = urlOrigin + "/User/List";
+                window.location = Origin + "/User/List";
                 /*window.history.back();*/
                 /*location.replace(document.referrer);*/
             }

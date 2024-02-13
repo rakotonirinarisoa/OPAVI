@@ -15,7 +15,7 @@ $(document).ready(() => {
     });
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListInstance() {
     let formData = new FormData();
@@ -27,7 +27,7 @@ function GetListInstance() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/DBaseTOM/GetInstance',
+        url: Origin + '/DBaseTOM/GetInstance',
         data: formData,
         cache: false,
         contentType: false,
@@ -84,7 +84,7 @@ function GetDB(id, test) {
     formData.append("instance", id);
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/DBaseTOM/GetBase',
+        url: Origin + '/DBaseTOM/GetBase',
         data: formData,
         cache: false,
         contentType: false,
@@ -134,7 +134,7 @@ $("#save").click(() => {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/DBaseTOM/Save',
+        url: Origin + '/DBaseTOM/Save',
         data: formData,
         cache: false,
         contentType: false,

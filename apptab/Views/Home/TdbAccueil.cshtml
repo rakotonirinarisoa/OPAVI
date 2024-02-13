@@ -143,7 +143,7 @@
         <thead style="position:sticky">
             <tr class="thead-accueil1" style="white-space: nowrap;">
                 <td style="text-align:right">
-                    <input type="checkbox" />
+                    <input type="checkbox" class="Checkall" />
                 </td>
                 <td style="font-weight: bold; text-align:center" width="5px">N°</td>
                 <td style="font-weight:bold; text-align:center" width="">Matricule</td>
@@ -170,7 +170,7 @@
         <thead style="position:sticky">
             <tr class="thead-accueil1" style="white-space: nowrap;">
                 <td style="text-align:right">
-                    <input type="checkbox" />
+                    <input type="checkbox" class="Checkall" />
                 </td>
                 <td style="font-weight: bold; text-align:center" width="5px">N°</td>
                 <td style="font-weight:bold; text-align:center" width="">Date n°ordre</td>
@@ -253,7 +253,7 @@
     </div>
 
     <div class="table-responsive mb-3" style="max-height:400px" tab="paie">
-        <table class="table table-hover table-striped">
+        <table class="table table-hover table-striped" id="TDB">
             <thead style="position:sticky">
                 <tr class="thead-accueil1" style="white-space: nowrap;">
                     <td style="font-weight: bold; text-align:center" width="5px">N°</td>
@@ -315,7 +315,7 @@
             </div>
         </div>
         <div class="mb-3 col col-sm-12 col-md-2">
-            <div class="btn btn-flat bg-gradient-teal col-12">
+            <div class="btn btn-flat bg-gradient-teal col-12" onclick="exportTableToExcel(TDB)">
                 <i class="fa fa-print"></i> Imprimer
             </div>
         </div>

@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetListUser();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListUser() {
     let formData = new FormData();
@@ -22,7 +22,7 @@ function GetListUser() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/SuperAdmin/FillTableMAPP',
+        url: Origin + '/SuperAdmin/FillTableMAPP',
         data: formData,
         cache: false,
         contentType: false,
@@ -82,7 +82,7 @@ function deleteMAPP(id) {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/SuperAdmin/DeleteMAPP',
+        url: Origin + '/SuperAdmin/DeleteMAPP',
         data: formData,
         cache: false,
         contentType: false,
@@ -105,5 +105,5 @@ function deleteMAPP(id) {
 }
 
 function DetailUpdateMAPP(id) {
-    window.location = urlOrigin + "/SuperAdmin/DetailsMAPP?UserId=" + id;
+    window.location = Origin + "/SuperAdmin/DetailsMAPP?UserId=" + id;
 }

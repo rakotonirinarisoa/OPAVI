@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetListDroit();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetListDroit() {
     let formData = new FormData();
@@ -22,7 +22,7 @@ function GetListDroit() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Admin/FillTable',
+        url: Origin + '/Admin/FillTable',
         data: formData,
         cache: false,
         contentType: false,
@@ -83,7 +83,7 @@ function deleteDroit(id) {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Admin/DeleteDroit',
+        url: Origin + '/Admin/DeleteDroit',
         data: formData,
         cache: false,
         contentType: false,
@@ -106,5 +106,5 @@ function deleteDroit(id) {
 }
 
 function DetailUpdateDroit(id) {
-    window.location = urlOrigin + "/Admin/DetailsUser?UserId=" + id;
+    window.location = Origin + "/Admin/DetailsUser?UserId=" + id;
 }

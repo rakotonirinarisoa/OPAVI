@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetUsers();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 
 function GetUsers() {
@@ -25,7 +25,7 @@ function GetUsers() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Crypto/DetailsCrypto',
+        url: Origin + '/Crypto/DetailsCrypto',
         data: formData,
         cache: false,
         contentType: false,
@@ -78,7 +78,7 @@ $(`[data-action="UpdateUser"]`).click(function () {
     
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/Crypto/UpdateCRT',
+        url: Origin + '/Crypto/UpdateCRT',
         data: formData,
         cache: false,
         contentType: false,

@@ -10,7 +10,7 @@ $(document).ready(() => {
     GetUsers();
 });
 
-let urlOrigin = "https://localhost:44334";
+//let urlOrigin = "https://localhost:44334";
 //let urlOrigin = "http://softwell.cloud/OPAVI";
 function GetUsers() {
     let formData = new FormData();
@@ -24,7 +24,7 @@ function GetUsers() {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/FTPSend/DetailsFTP',
+        url: Origin + '/FTPSend/DetailsFTP',
         data: formData,
         cache: false,
         contentType: false,
@@ -78,7 +78,7 @@ $(`[data-action="UpdateUser"]`).click(function () {
 
     $.ajax({
         type: "POST",
-        url: urlOrigin + '/FTPSend/UpdateFTP',
+        url: Origin + '/FTPSend/UpdateFTP',
         data: formData,
         cache: false,
         contentType: false,
